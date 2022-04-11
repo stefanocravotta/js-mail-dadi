@@ -46,6 +46,7 @@ btn.addEventListener('click', function(){
 
 // 2 genera un numero random
 
+
 const min = 1;
 const max = 6;
 
@@ -54,21 +55,48 @@ const numeroPc = ( Math.floor(Math.random() * (max - min + 1))  + min);
 
 console.log(numeroUtente);
 console.log(numeroPc);
-document.getElementById("numero-utente").append(numeroUtente);
-document.getElementById("numero-pc").append(numeroPc);
+
 
 let vittoria = true;
 let output = document.getElementById("risultato");
 
-if(numeroUtente < numeroPc){
-    vittoria = false;
-}
+const btnNumero = document.getElementById('scegli-numero');
+const btnAnnulla = document.getElementById('annulla');
 
-if(vittoria){
-    output.append("Complimenti hai vinto")
-}else{
-    output.append("Fregati hai perso")
-}
+btnNumero.addEventListener('click', function(){
+        document.getElementById("numero-utente").append(numeroUtente);
+        document.getElementById("numero-pc").append(numeroPc);
+
+        if(numeroUtente < numeroPc){
+        vittoria = false;
+        }
+
+        if(vittoria){
+        output.append("Complimenti hai vinto")
+        }else{
+        output.append("Fregati hai perso")
+            }
+    
+
+})
+
+btnAnnulla.addEventListener('click', function(){
+
+    document.getElementById("numero-utente").innerHTML="";
+    document.getElementById("numero-pc").innerHTML="";
+
+        
+
+        if(vittoria){
+        output.innerHTML="";
+        }else{
+        output.innerHTML="";
+            }
+
+})
+
+
+
 
 
 
