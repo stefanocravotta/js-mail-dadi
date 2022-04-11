@@ -11,3 +11,34 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto. */
 //chiediamo all'utente la sua mail
 
 
+
+
+const btn = document.querySelector('button')
+const utentiAutorizzati = ['ciao', 'stella', 'banana', 'luce'];
+
+
+console.log(utentiAutorizzati);
+
+btn.addEventListener('click', function(){
+
+    const mailUtente = document.getElementById('mail-inserita').value;
+    let verificaMail = false;
+
+    for(let i = 0; i < utentiAutorizzati.length; i++){
+
+        
+        
+        if(mailUtente === utentiAutorizzati[i]){
+            console.log("si");
+            verificaMail = true;
+        }
+    }
+
+    if(verificaMail){
+        console.log('è presente in lista');
+        document.getElementById('mail').innerHTML = "Autorizzato"
+    }else{
+        console.log('NON presente in lista');
+        document.getElementById('mail').innerHTML = "Non Autorizzato"
+    }
+})
