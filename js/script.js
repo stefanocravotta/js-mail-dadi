@@ -8,7 +8,7 @@ Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
 Stabilire il vincitore, in base a chi fa il punteggio più alto. */
 
 
-//chiediamo all'utente la sua mail
+// 1 chiediamo all'utente la sua mail
 
 
 
@@ -42,3 +42,40 @@ btn.addEventListener('click', function(){
         document.getElementById('mail').innerHTML = "Non Autorizzato"
     }
 })
+
+
+// 2 genera un numero random
+
+const min = 1;
+const max = 6;
+
+const numeroUtente = ( Math.floor(Math.random() * (max - min + 1))  + min);
+const numeroPc = ( Math.floor(Math.random() * (max - min + 1))  + min);
+
+console.log(numeroUtente);
+console.log(numeroPc);
+document.getElementById("numero-utente").append(numeroUtente);
+document.getElementById("numero-pc").append(numeroPc);
+
+let vittoria = true;
+let output = document.getElementById("risultato");
+
+if(numeroUtente < numeroPc){
+    vittoria = false;
+}
+
+if(vittoria){
+    output.append("Complimenti hai vinto")
+}else{
+    output.append("Fregati hai perso")
+}
+
+
+
+
+/* 
+
+
+document.getElementById('numero-utente').innerHTML =`numeroUtente`
+document.getElementById('numero-pc').innerHTML = numeroPc;
+ */
