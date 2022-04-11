@@ -65,6 +65,7 @@ const btnNumero = document.getElementById('scegli-numero');
 const btnAnnulla = document.getElementById('annulla');
 
 btnNumero.addEventListener('click', function(){
+    
         document.getElementById("numero-utente").innerHTML = `Ecco il tuo numero <br> ${numeroUtente}`;
         console.log(numeroUtente);
         document.getElementById("numero-pc").innerHTML = `Pc number <br> ${numeroPc}`;
@@ -82,11 +83,11 @@ btnNumero.addEventListener('click', function(){
         
         
         if(vittoria){
-        output.innerHTML = "Complimenti hai vinto";
+        output.innerHTML = "Complimenti hai vinto !!!!!!";
         }else if(pari){
-        output.innerHTML= "Parità";
+        output.innerHTML= "Parità -_-";
         }else{
-            output.innerHTML= "Fregati hai perso";
+            output.innerHTML= "Fregati hai perso !!!!!!";
         }
     
 
