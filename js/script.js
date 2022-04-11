@@ -14,7 +14,7 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto. */
 
 
 const btn = document.querySelector('button')
-const utentiAutorizzati = ['ciao', 'stella', 'banana', 'luce'];
+const utentiAutorizzati = ['stefano.cravotta8@gmail.com', 'peppino54@hotmail.it', 'maccio99@libero.it', 'fiorenzogigli@outlook.com'];
 
 
 console.log(utentiAutorizzati);
@@ -58,24 +58,36 @@ console.log(numeroPc);
 
 
 let vittoria = true;
+let pari = false;
 let output = document.getElementById("risultato");
 
 const btnNumero = document.getElementById('scegli-numero');
 const btnAnnulla = document.getElementById('annulla');
 
 btnNumero.addEventListener('click', function(){
-        document.getElementById("numero-utente").append(numeroUtente);
-        document.getElementById("numero-pc").append(numeroPc);
+        document.getElementById("numero-utente").innerHTML = `Ecco il tuo numero <br> ${numeroUtente}`;
+        console.log(numeroUtente);
+        document.getElementById("numero-pc").innerHTML = `Pc number <br> ${numeroPc}`;
+        
+        document.querySelector(".small-box").classList.add('sc-box');
+        document.querySelector(".small-box-2").classList.add('sc-box');
 
-        if(numeroUtente < numeroPc){
-        vittoria = false;
+        
+        if(numeroUtente === numeroPc){
+            pari = true;
+            vittoria = false;
+        }else if(numeroUtente < numeroPc){
+            vittoria = false;
         }
-
+        
+        
         if(vittoria){
-        output.append("Complimenti hai vinto")
+        output.innerHTML = "Complimenti hai vinto";
+        }else if(pari){
+        output.innerHTML= "Parità";
         }else{
-        output.append("Fregati hai perso")
-            }
+            output.innerHTML= "Fregati hai perso";
+        }
     
 
 })
@@ -85,13 +97,16 @@ btnAnnulla.addEventListener('click', function(){
     document.getElementById("numero-utente").innerHTML="";
     document.getElementById("numero-pc").innerHTML="";
 
+    document.querySelector(".small-box").classList.remove('sc-box');
+    document.querySelector(".small-box-2").classList.remove('sc-box');
+
         
 
-        if(vittoria){
+    if(vittoria){
         output.innerHTML="";
-        }else{
-        output.innerHTML="";
-            }
+     }else{
+            output.innerHTML="";
+             }
 
 })
 

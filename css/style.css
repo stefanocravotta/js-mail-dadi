@@ -1,0 +1,16 @@
+body{
+    background-color: #097aee;
+}
+
+.mio-cont{
+    background-color: #41498b;
+    border-radius: 30px;
+    box-shadow: 0 0 10px 2px black;
+}
+.sc-box{
+    width: 350px;
+    height: 150px;
+    background-color: #097aee;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px black;
+}
